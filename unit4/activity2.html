@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動二・電路有哪些連接方式｜單元四小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元四 ➜ 活動二</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動二</span>
+      <h1>🔋 電路有哪些連接方式</h1>
+      <p>複習：電池串聯燈泡較亮，並聯亮度不變；燈泡串聯較暗且一壞全滅，並聯亮度不變且互不影響。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>電池串聯（正接負）：燈泡比只用一個電池時更亮。電池並聯（正接正、負接負）：亮度不變，較耐久。</li>
+        <li>燈泡串聯：亮度變暗，其中一個壞掉，其他也會跟著熄滅。</li>
+        <li>燈泡並聯：亮度不變，其中一個壞掉，不影響其他燈泡。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：串聯還是並聯？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元四總覽</a></p>
+    <footer>單元四・活動二 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'電池正極接另一個電池的負極', bucket:'series'},
+  {label:'把兩個燈泡串成一條線再接電池', bucket:'series'},
+  {label:'這樣接電池，燈泡會變得比較亮', bucket:'series'},
+  {label:'其中一個燈泡壞了，其他燈泡也全部熄滅', bucket:'series'},
+  {label:'電線將每個電池正極接正極、負極接負極', bucket:'parallel'},
+  {label:'每個燈泡分別用電線接到電池的兩極', bucket:'parallel'},
+  {label:'這樣接電池，燈泡亮度和只接一個電池差不多', bucket:'parallel'},
+  {label:'其中一個燈泡壞了，不影響其他燈泡發亮', bucket:'parallel'}
+];
+const buckets = [
+  {key:'series', label:'🔗 串聯'},
+  {key:'parallel', label:'🎗️ 並聯'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'想要讓手電筒的燈泡變得更亮，電池應該怎麼連接？', options:['電池串聯（正極接負極）','電池並聯（正接正、負接負）','只用一個電池','拔掉電池'], answer:0, explain:'電池串聯時，燈泡會比只用一個電池時更亮。'},
+  {q:'電池並聯（正極接正極、負極接負極）時，燈泡的亮度會怎樣？', options:['和只接一個電池時差不多','變得更亮','變得更暗','忽亮忽暗'], answer:0, explain:'電池並聯時，燈泡會維持原來的亮度。'},
+  {q:'家裡聖誕樹上串接的燈泡，如果採用「串聯」方式連接，當其中一顆燈泡壞掉會怎樣？', options:['所有燈泡都會熄滅','只有壞掉那顆熄滅','亮度會變強','不受影響'], answer:0, explain:'燈泡串聯時，其中一個壞掉即成斷路，所有燈泡都不會發亮。'},
+  {q:'教室日光燈如果採用「並聯」方式連接，其中一盞燈壞掉，其他燈會怎樣？', options:['不受影響、繼續正常發亮','全部熄滅','全部變暗','全部變亮'], answer:0, explain:'燈泡並聯時，其中一個壞掉不影響其他燈泡的亮度。'},
+  {q:'燈泡串聯時，和只接一個燈泡相比，亮度會如何？', options:['變暗','變亮','不變','忽明忽暗'], answer:0, explain:'燈泡串聯時，因電阻增大、電流變小，燈泡會變暗。'},
+  {q:'想要在教室裡讓每一盞燈都能獨立開關、互不影響，應該採用哪種連接方式？', options:['並聯','串聯','都可以','都不行'], answer:0, explain:'並聯讓每個燈泡分別連接電源，互不影響。'},
+  {q:'電池正極對正極、負極對負極的連接方式稱為？', options:['並聯','串聯','短路','斷路'], answer:0, explain:'電池正極接正極、負極接負極的連接方式稱為並聯。'},
+  {q:'手電筒裡的兩顆電池為了讓燈泡更亮，通常採用什麼連接方式？', options:['串聯','並聯','不連接','隨便接'], answer:0, explain:'手電筒中的電池多採用串聯，讓燈泡更亮。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

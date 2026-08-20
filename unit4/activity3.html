@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動三・用電觀念知多少｜單元四小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元四 ➜ 活動三</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動三</span>
+      <h1>⚙️ 用電觀念知多少</h1>
+      <p>複習：小馬達通電會轉動，正負極接反則轉向相反；生活中的電器有些用電池、有些用電力公司傳送的電，都要注意用電安全。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>小馬達側面的金屬片連接電池正負極，通電後會轉動；正負極接反，轉動方向也會相反。</li>
+        <li>更換電池要全部更換，新舊電池不可混用；長期不用的電器應取出電池。</li>
+        <li>電力公司傳送來的電力比電池強，使用家電要特別注意安全用電。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：電池還是電力公司？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元四總覽</a></p>
+    <footer>單元四・活動三 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'手電筒', bucket:'battery'},
+  {label:'電視遙控器', bucket:'battery'},
+  {label:'手錶', bucket:'battery'},
+  {label:'電動玩具車', bucket:'battery'},
+  {label:'冰箱', bucket:'grid'},
+  {label:'冷氣機', bucket:'grid'},
+  {label:'電鍋', bucket:'grid'},
+  {label:'洗衣機', bucket:'grid'}
+];
+const buckets = [
+  {key:'battery', label:'🔋 電池供電'},
+  {key:'grid', label:'🔌 電力公司供電'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'小馬達要轉動，電線應該連接在小馬達的哪個部位？', options:['側面的金屬片','塑膠外殼','橡膠墊片','說明書'], answer:0, explain:'電線連接小馬達側面的金屬片，通電後小馬達才會轉動。'},
+  {q:'如果把電池的正負極反過來接，小馬達轉動的方向會怎樣？', options:['方向相反','完全不轉','轉得更快','冒煙'], answer:0, explain:'改變電池正負極的連接方式，會使小馬達轉動方向相反。'},
+  {q:'下列何者是利用電力公司傳送來的電力運作的家電？', options:['冰箱','手電筒','遙控器','手錶'], answer:0, explain:'冰箱通常插電使用，電力來自電力公司；手電筒、遙控器、手錶多使用電池。'},
+  {q:'更換電池時，正確的做法是？', options:['新舊電池全部一起更換，不要混用','只換一半、留一半舊的','新舊電池混合使用沒關係','電器永遠不用更換電池'], answer:0, explain:'新舊電池混用會縮短新電池壽命，也容易讓舊電池漏液，應全部一起更換。'},
+  {q:'長期不使用的電器，正確的做法是？', options:['把電池取出保存','讓電池留在電器裡最安全','把電池丟進水裡','把電池拆開'], answer:0, explain:'長期不使用的電器應將電池取出，避免漏液損壞電器。'},
+  {q:'廢電池的正確處理方式是？', options:['做好分類回收','直接丟進一般垃圾桶','丟進水溝','燒掉'], answer:0, explain:'廢電池含有化學物質，應做好回收，避免汙染環境。'},
+  {q:'電力公司傳送來的電力和電池相比，通常具有什麼特性？', options:['電力較強，需要更小心用電安全','電力較弱，不需要注意安全','兩者完全一樣','電力公司的電比較安全所以不用注意'], answer:0, explain:'電力公司傳送來的電力比電池強，使用時要特別注意用電安全。'},
+  {q:'下列何者「不是」小馬達在生活中的應用？', options:['玻璃杯','電風扇','玩具車','吹風機'], answer:0, explain:'玻璃杯不需要馬達運作；電風扇、玩具車、吹風機都應用了小馬達。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

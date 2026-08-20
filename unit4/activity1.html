@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動一・如何讓燈泡發亮｜單元四小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元四 ➜ 活動一</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動一</span>
+      <h1>💡 如何讓燈泡發亮</h1>
+      <p>複習：電池、電線、燈泡連接成通路才會發亮；金屬是電的良導體，塑膠、木材是不良導體。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>電路的組成元件：電池（正極、負極）、電線（銅線＋塑膠皮）、燈泡（燈絲、螺紋金屬體、灰色接點）。</li>
+        <li>電線連接電池與燈泡，燈泡發亮稱為「通路」；燈泡不亮稱為「斷路」。</li>
+        <li>金屬製品是電的良導體，紙、塑膠、玻璃、木材是電的不良導體。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：良導體還是不良導體？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元四總覽</a></p>
+    <footer>單元四・活動一 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'迴紋針', bucket:'good'},
+  {label:'鑰匙', bucket:'good'},
+  {label:'鋁箔紙', bucket:'good'},
+  {label:'銅線', bucket:'good'},
+  {label:'塑膠尺', bucket:'bad'},
+  {label:'橡皮擦', bucket:'bad'},
+  {label:'玻璃杯', bucket:'bad'},
+  {label:'木頭筷子', bucket:'bad'}
+];
+const buckets = [
+  {key:'good', label:'⚡ 電的良導體'},
+  {key:'bad', label:'🚫 電的不良導體'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'要讓手電筒的燈泡發亮，電路中至少需要哪些元件？', options:['電池、電線、燈泡','只要燈泡就好','只要電池就好','只要電線就好'], answer:0, explain:'電池、電線、燈泡連接成完整迴路，燈泡才會發亮。'},
+  {q:'電池凸起的一端稱為？', options:['正極','負極','燈絲','螺紋'], answer:0, explain:'電池凸起的一端是正極，平的一端是負極。'},
+  {q:'電路形成通路時，燈泡會怎樣？', options:['發亮','不會發亮','爆炸','變色'], answer:0, explain:'電流能通過的完整電路稱為通路，燈泡會發亮。'},
+  {q:'下列哪一項物品是「電的良導體」？', options:['迴紋針（金屬）','塑膠尺','橡皮擦','玻璃杯'], answer:0, explain:'金屬製品是電的良導體，能讓燈泡發亮。'},
+  {q:'用紙板和迴紋針可以製作簡易開關，主要是利用什麼原理？', options:['金屬迴紋針接觸時形成通路','紙板本身會導電','顏色會影響導電','重量會影響導電'], answer:0, explain:'迴紋針是金屬，接觸時能形成通路，讓燈泡發亮。'},
+  {q:'小明只用一條電線連接電池和燈泡，並讓燈泡的灰色接點碰到電池正極，這樣做的目的是？', options:['讓燈泡與電池直接接觸形成通路','增加電池電量','讓燈泡變得更亮','防止觸電'], answer:0, explain:'燈泡的灰色接點直接碰觸電池正極，也能形成通路，讓燈泡發亮。'},
+  {q:'燈泡外部玻璃罩裡面會發光的細絲稱為？', options:['燈絲','電線','螺紋','接點'], answer:0, explain:'燈泡內的燈絲通電後會發亮。'},
+  {q:'下列何者「不是」電的良導體？', options:['木頭筷子','鐵釘','鋁箔紙','銅線'], answer:0, explain:'木頭是電的不良導體，鐵釘、鋁箔紙、銅線都是金屬，屬於良導體。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

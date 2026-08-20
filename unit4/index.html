@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單元四・好玩的電路｜複習樂園</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元四・好玩的電路</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">單元四</span>
+      <h1>💡🔋 好玩的電路</h1>
+      <p>電池、電線、燈泡連接成通路才會發亮；串聯、並聯的接法會帶來不同效果；生活中處處都要注意用電安全。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--green-4);">🕹️ 各活動的關卡小遊戲</h3>
+      <div class="grid">
+        <a class="tile" href="activity1.html">
+          <div class="emoji">💡</div>
+          <h3>活動一</h3>
+          <p>如何讓燈泡發亮</p>
+        </a>
+        <a class="tile" href="activity2.html">
+          <div class="emoji">🔋</div>
+          <h3>活動二</h3>
+          <p>電路有哪些連接方式</p>
+        </a>
+        <a class="tile" href="activity3.html">
+          <div class="emoji">⚙️</div>
+          <h3>活動三</h3>
+          <p>用電觀念知多少</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelNotes">📖 重點整理</button>
+      <button class="tab-btn" data-target="panelQuiz">🎮 總複習大挑戰（15題）</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+
+      <div class="tab-panel active" id="panelNotes">
+        <div class="concept-map">
+          <div class="concept-card c2">
+            <h4>💡 活動一・如何讓燈泡發亮</h4>
+            <ul>
+              <li>電池＋電線＋燈泡形成通路</li>
+              <li>斷路則燈泡不亮</li>
+              <li>金屬是良導體，可製作開關</li>
+            </ul>
+          </div>
+          <div class="concept-card c1">
+            <h4>🔋 活動二・電路有哪些連接方式</h4>
+            <ul>
+              <li>電池串聯較亮，並聯不變</li>
+              <li>燈泡串聯較暗、一壞全滅</li>
+              <li>燈泡並聯不變、互不影響</li>
+            </ul>
+          </div>
+          <div class="concept-card c3">
+            <h4>⚙️ 活動三・用電觀念知多少</h4>
+            <ul>
+              <li>正負極接反，馬達轉向相反</li>
+              <li>電池／電力公司兩種來源</li>
+              <li>安全用電、正確回收電池</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note-box" style="margin-top:18px;">
+          <h4>一句話總結</h4>
+          <p style="margin:0;">電池、電線、燈泡連接成通路才能發光，金屬是電的良導體；電池與燈泡的串聯、並聯會帶來不同效果；小馬達通電會轉動，生活中要落實安全用電與正確回收電池的習慣。</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panelQuiz">
+        <div id="finalQuiz"></div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="../index.html">⬅ 回到單元首頁</a></p>
+    <footer>單元四・好玩的電路　複習網頁</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const finalQuestions = [
+  {q:'要讓燈泡發亮，電路必須形成什麼狀態？', options:['通路','斷路','短路','靜路'], answer:0, explain:'電流能通過的完整電路稱為通路，燈泡才會發亮。'},
+  {q:'電池平的一端稱為？', options:['負極','正極','燈絲','螺紋'], answer:0, explain:'電池平的一端是負極，凸起的一端是正極。'},
+  {q:'下列何者是電的良導體？', options:['鐵釘','塑膠尺','木頭','橡皮擦'], answer:0, explain:'金屬（如鐵釘）是電的良導體。'},
+  {q:'想要讓燈泡變得比只用一個電池時更亮，應該怎麼連接電池？', options:['串聯','並聯','拔掉一個','不連接'], answer:0, explain:'電池串聯時，燈泡的亮度會變得更亮。'},
+  {q:'電池並聯時，燈泡的亮度會怎樣？', options:['和只接一個電池差不多','變得更亮','變得更暗','忽亮忽暗'], answer:0, explain:'電池並聯時，燈泡會維持原來的亮度，但較耐久。'},
+  {q:'燈泡串聯時，其中一個壞掉，其他燈泡會怎樣？', options:['全部熄滅','不受影響','變得更亮','忽明忽暗'], answer:0, explain:'燈泡串聯時，一個壞掉即形成斷路，所有燈泡都會熄滅。'},
+  {q:'燈泡並聯時，其中一個壞掉，其他燈泡會怎樣？', options:['不受影響、正常發亮','全部熄滅','全部變暗','全部變亮'], answer:0, explain:'燈泡並聯時，各燈泡獨立連接電源，互不影響。'},
+  {q:'小馬達要轉動，電線應該連接在哪個部位？', options:['側面的金屬片','塑膠外殼','軸心的塑膠套','說明書'], answer:0, explain:'電線連接小馬達側面的金屬片，通電後才會轉動。'},
+  {q:'把電池正負極接反，小馬達轉動的方向會怎樣？', options:['方向相反','完全不轉','轉得更快','冒煙損壞'], answer:0, explain:'正負極接反會使小馬達轉動方向相反。'},
+  {q:'下列何者是用電池供電的物品？', options:['電視遙控器','冰箱','冷氣機','洗衣機'], answer:0, explain:'遙控器通常使用電池供電；冰箱、冷氣機、洗衣機則使用電力公司傳送的電力。'},
+  {q:'更換電池時，正確的做法是？', options:['新舊電池全部一起更換','新舊電池混用','只換一半','完全不用換'], answer:0, explain:'新舊電池混用會縮短新電池壽命，容易讓舊電池漏液，應全部一起更換。'},
+  {q:'廢電池應該怎麼處理？', options:['做好分類回收','丟進一般垃圾桶','丟進水溝','燒掉'], answer:0, explain:'廢電池含化學物質，應做好回收，避免汙染環境。'},
+  {q:'長期不使用的電器，正確的做法是？', options:['把電池取出保存','讓電池留在電器裡','把電池丟進水裡','拆開電池'], answer:0, explain:'長期不用的電器應取出電池，避免漏液損壞電器。'},
+  {q:'金屬製品可以導電，被稱為電的什麼？', options:['良導體','不良導體','絕緣體','半導體'], answer:0, explain:'金屬製品是電的良導體。'},
+  {q:'電力公司傳送來的電力和電池相比，通常具有什麼特性？', options:['電力較強，需要更注意用電安全','電力較弱','兩者完全相同','不需要注意安全'], answer:0, explain:'電力公司傳送來的電力比電池強，使用時要特別注意用電安全。'}
+];
+renderQuiz(document.getElementById('finalQuiz'), finalQuestions, {shuffle:true});
+</script>
+</body>
+</html>
