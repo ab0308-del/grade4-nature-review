@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動三・如何應用聲與光｜單元三小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元三 ➜ 活動三</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動三</span>
+      <h1>🎉 如何應用聲與光</h1>
+      <p>複習：聲音和光的應用可以達到警示指示或裝飾娛樂的效果；也能運用聲音、光的特性製作簡單玩具。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>警示指示：路燈、行人穿越號誌、救護車警示燈、腳踏車車鈴、一氧化碳偵測警報器。</li>
+        <li>裝飾娛樂：玩具、樂器、燈飾、音樂會或燈會。</li>
+        <li>傳聲筒應用固體傳聲；鏡中影像應用光的反射，鏡子夾角越小，影像數量越多。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：警示指示還是裝飾娛樂？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元三總覽</a></p>
+    <footer>單元三・活動三 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'救護車的警示燈與鳴笛聲', bucket:'warn'},
+  {label:'行人穿越道路的號誌燈', bucket:'warn'},
+  {label:'腳踏車的車鈴聲', bucket:'warn'},
+  {label:'一氧化碳偵測警報器', bucket:'warn'},
+  {label:'耶誕節掛的燈飾', bucket:'deco'},
+  {label:'生日蛋糕上點燃的蠟燭', bucket:'deco'},
+  {label:'音樂會現場的舞臺燈光', bucket:'deco'},
+  {label:'會發出聲音與光的玩具', bucket:'deco'}
+];
+const buckets = [
+  {key:'warn', label:'🚨 警示指示'},
+  {key:'deco', label:'🎈 裝飾娛樂'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'救護車鳴笛聲和警示燈的主要功能是什麼？', options:['警示、提醒其他車輛讓道','單純好看','娛樂用途','沒有特別功能'], answer:0, explain:'救護車的鳴笛聲和警示燈是為了警示、提醒其他車輛讓道。'},
+  {q:'傳聲筒（紙杯電話）是利用聲音透過什麼傳播的原理製作的？', options:['固體（棉線）','氣體','液體','真空'], answer:0, explain:'傳聲筒利用聲音可以透過固體（棉線）傳播的原理。'},
+  {q:'製作傳聲筒時，棉線拉得越直、越緊，聽到的聲音會如何？', options:['越清晰','越模糊','完全消失','變成噪音'], answer:0, explain:'棉線拉得越直、越緊，聲音的傳播效果越好，聽起來越清晰。'},
+  {q:'製作「鏡中影像」玩具時，鏡子夾角越小，看到的物品影像數量會怎樣？', options:['越多','越少','不變','消失'], answer:0, explain:'鏡子夾角越小，反射形成的影像數量會越多。'},
+  {q:'下列何者主要功能是「裝飾娛樂」而非警示指示？', options:['耶誕節的燈飾','救護車警示燈','行人穿越號誌','一氧化碳警報器'], answer:0, explain:'耶誕燈飾主要用途是裝飾與娛樂，其餘選項都屬於警示指示功能。'},
+  {q:'電視、冷氣遙控器是利用什麼看不見的光來操控電器的？', options:['紅外線','紫外線','雷射光','月光'], answer:0, explain:'遙控器前端的LED會發出紅外線訊號，用來操控電器。'},
+  {q:'腳踏車車鈴的聲音在生活中主要用來做什麼？', options:['提醒用路人注意','單純好玩','製造噪音','測試音量大小'], answer:0, explain:'腳踏車車鈴主要用來提醒用路人，屬於警示指示的應用。'},
+  {q:'下列何者「不是」應用聲音、光特性製作的物品？', options:['一般的書本','傳聲筒','燈塔','反光背心'], answer:0, explain:'一般書本並未應用聲音或光的特性；傳聲筒、燈塔、反光背心都分別應用了聲音或光的特性。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

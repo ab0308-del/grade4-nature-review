@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單元三・有趣的聲光現象｜複習樂園</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元三・有趣的聲光現象</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">單元三</span>
+      <h1>🔊💡 有趣的聲光現象</h1>
+      <p>物體振動產生聲音，光是直線行進的，反光的鏡面能改變光的方向。生活中處處都有聲音和光的巧妙應用。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--green-4);">🕹️ 各活動的關卡小遊戲</h3>
+      <div class="grid">
+        <a class="tile" href="activity1.html">
+          <div class="emoji">🔊</div>
+          <h3>活動一</h3>
+          <p>聲音如何產生和傳播</p>
+        </a>
+        <a class="tile" href="activity2.html">
+          <div class="emoji">💡</div>
+          <h3>活動二</h3>
+          <p>光有什麼特性</p>
+        </a>
+        <a class="tile" href="activity3.html">
+          <div class="emoji">🎉</div>
+          <h3>活動三</h3>
+          <p>如何應用聲與光</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelNotes">📖 重點整理</button>
+      <button class="tab-btn" data-target="panelQuiz">🎮 總複習大挑戰（15題）</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+
+      <div class="tab-panel active" id="panelNotes">
+        <div class="concept-map">
+          <div class="concept-card c2">
+            <h4>🔊 活動一・聲音如何產生和傳播</h4>
+            <ul>
+              <li>物體振動產生聲音</li>
+              <li>振動越大，聲音越大</li>
+              <li>可經氣體／液體／固體傳播</li>
+            </ul>
+          </div>
+          <div class="concept-card c1">
+            <h4>💡 活動二・光有什麼特性</h4>
+            <ul>
+              <li>有光才能看見物體</li>
+              <li>光直線行進，阻擋成影</li>
+              <li>鏡面角度改變反射方向</li>
+            </ul>
+          </div>
+          <div class="concept-card c3">
+            <h4>🎉 活動三・如何應用聲與光</h4>
+            <ul>
+              <li>警示指示 vs 裝飾娛樂</li>
+              <li>傳聲筒：固體傳聲</li>
+              <li>鏡中影像：光的反射</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note-box" style="margin-top:18px;">
+          <h4>一句話總結</h4>
+          <p style="margin:0;">聲音來自物體振動，能透過氣體、液體、固體傳播；光是直線行進的，遇到物體會形成影子，照到平滑光亮的鏡面則會反射，這些特性都被廣泛應用在生活的警示與娛樂中。</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panelQuiz">
+        <div id="finalQuiz"></div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="../index.html">⬅ 回到單元首頁</a></p>
+    <footer>單元三・有趣的聲光現象　複習網頁</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const finalQuestions = [
+  {q:'物體發出聲音時，一定會出現什麼現象？', options:['振動','發光','變色','變重'], answer:0, explain:'物體振動時才會產生聲音。'},
+  {q:'物體振動越大，發出的聲音會怎樣？', options:['越大','越小','不變','消失'], answer:0, explain:'物體振動越大，發出的聲音也越大。'},
+  {q:'耳朵貼在桌面上比較容易聽到敲擊聲，這說明聲音可以透過什麼傳播？', options:['固體','只有空氣','真空','完全無法傳播'], answer:0, explain:'固體是良好的傳聲介質。'},
+  {q:'太空中是真空環境，太空人若沒有通訊設備，彼此能直接聽到說話聲嗎？', options:['不能，因為真空無法傳播聲音','可以，聲音在真空傳得更遠','可以，只要聲音夠大','不能，因為太空太冷'], answer:0, explain:'聲音需要介質才能傳播，真空中沒有介質，所以無法傳播聲音。'},
+  {q:'我們能看見物體，是因為什麼？', options:['有光照在物體上，或物體本身發光','物體本身有磁力','空氣的流動','聲音的傳播'], answer:0, explain:'有光照在物體上，或物體本身會發光，我們才能看見物體。'},
+  {q:'光的行進方式具有什麼特性？', options:['直線行進','曲線行進','忽快忽慢','隨機亂飄'], answer:0, explain:'光是以直線的方式行進的。'},
+  {q:'物體擋住光線後，物體的另一側會出現什麼？', options:['影子','彩虹','回音','熱氣'], answer:0, explain:'光被物體阻擋後，物體的另一側會形成影子。'},
+  {q:'容易反光的物體通常具有什麼樣的表面特徵？', options:['平滑、光亮','粗糙、暗沉','柔軟、蓬鬆','透明、易碎'], answer:0, explain:'容易反光的物體通常具有平滑、光亮的鏡面特徵。'},
+  {q:'鏡子的角度改變後，反射出去的光的方向會如何？', options:['跟著改變','完全不變','光會消失','變成聲音'], answer:0, explain:'鏡面的角度會影響光的反射方向。'},
+  {q:'救護車的警示燈和鳴笛聲主要屬於哪一種應用？', options:['警示指示','裝飾娛樂','純粹好看','沒有作用'], answer:0, explain:'救護車警示燈和鳴笛聲用來警示、提醒其他車輛讓道。'},
+  {q:'耶誕燈飾、生日蛋糕蠟燭主要屬於哪一種應用？', options:['裝飾娛樂','警示指示','醫療用途','導航用途'], answer:0, explain:'耶誕燈飾、生日蠟燭主要用於裝飾與娛樂。'},
+  {q:'傳聲筒（紙杯電話）是應用了聲音的什麼特性製作的？', options:['聲音可以透過固體（棉線）傳播','聲音可以在真空中傳播','聲音可以變成光','聲音會自動放大'], answer:0, explain:'傳聲筒利用聲音可以透過固體傳播的原理，聲音沿棉線傳到另一端。'},
+  {q:'製作「鏡中影像」玩具時，鏡子夾角越小，看到的物品影像數量會怎樣？', options:['越多','越少','不變','消失'], answer:0, explain:'鏡子夾角越小，反射形成的影像數量越多。'},
+  {q:'腳踏車後方裝設反光片，主要應用光的什麼特性？', options:['反射','發光','直線行進形成影子','折射'], answer:0, explain:'反光片利用光的反射特性，將來車的燈光反射回去，提醒駕駛注意。'},
+  {q:'遙控器是利用哪一種看不見的光來操控電器的？', options:['紅外線','紫外線','雷射光','月光'], answer:0, explain:'遙控器前端的LED會發出紅外線訊號來操控電器。'}
+];
+renderQuiz(document.getElementById('finalQuiz'), finalQuestions, {shuffle:true});
+</script>
+</body>
+</html>

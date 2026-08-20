@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動一・聲音如何產生和傳播｜單元三小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元三 ➜ 活動一</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動一</span>
+      <h1>🔊 聲音如何產生和傳播</h1>
+      <p>複習：物體振動會產生聲音，振動越大聲音越大；聲音可以透過氣體、液體、固體傳播。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>物體振動時才會產生聲音，振動停止聲音也會停止。</li>
+        <li>物體振動越大，發出的聲音越大；振動越小，聲音越小。</li>
+        <li>聲音可以透過氣體（空氣）、液體（水）、固體（桌子、鐵軌）傳播，真空中無法傳播。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：聲音靠什麼傳播？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元三總覽</a></p>
+    <footer>單元三・活動一 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'操場上聽到同學的加油聲', bucket:'gas'},
+  {label:'教室裡聽到老師講課的聲音', bucket:'gas'},
+  {label:'潛入水中聽到船槳打水的聲音', bucket:'liquid'},
+  {label:'海豚在水中彼此溝通', bucket:'liquid'},
+  {label:'耳朵貼在桌面上聽敲擊聲', bucket:'solid'},
+  {label:'耳朵貼在鐵軌上聽遠處火車聲', bucket:'solid'},
+  {label:'隔壁鄰居敲牆壁，家裡也聽得到', bucket:'solid'},
+  {label:'房間外家人呼喊吃飯的聲音', bucket:'gas'}
+];
+const buckets = [
+  {key:'gas', label:'💨 氣體傳播'},
+  {key:'liquid', label:'💧 液體傳播'},
+  {key:'solid', label:'🪵 固體傳播'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'小華說話時用手摸自己的喉嚨，感覺麻麻的，這是因為喉嚨裡的什麼在振動？', options:['聲帶','舌頭','牙齒','嘴唇'], answer:0, explain:'說話時聲帶會振動，所以摸喉嚨會感覺到麻麻的振動感。'},
+  {q:'用力彈撥橡皮筋和輕輕彈撥橡皮筋相比，哪一種發出的聲音比較大？', options:['用力彈撥（振動較大）','輕輕彈撥（振動較小）','兩者一樣大','跟力量大小無關'], answer:0, explain:'物體振動越大，發出的聲音也越大。'},
+  {q:'當正在振動發聲的橡皮筋被手壓住停止振動，聲音會怎樣？', options:['聲音也跟著停止','聲音會變得更大','聲音不受影響','聲音會變得更好聽'], answer:0, explain:'物體振動停止時，聲音也會跟著停止。'},
+  {q:'小美潛入游泳池水中，仍然能聽到岸上教練吹哨子的聲音，這表示聲音可以透過什麼傳播？', options:['液體（水）','只能透過空氣','真空','聲音無法透過水傳播'], answer:0, explain:'水是液體，聲音可以透過液體傳播，甚至傳播效果比空氣更好。'},
+  {q:'太空人在外太空的真空環境中，需要靠什麼才能彼此交談？', options:['電子通訊設備','直接大聲喊叫','固體傳聲','用眼神交流'], answer:0, explain:'真空中沒有介質可以傳播聲音，所以太空人需要靠電子通訊設備交談。'},
+  {q:'下列何者「不會」使物體發出聲音？', options:['讓物體完全靜止不動','用力敲擊物體','撥動拉緊的橡皮筋','對著鼓面用力拍打'], answer:0, explain:'物體必須振動才會發出聲音，完全靜止不動則不會發出聲音。'},
+  {q:'響尾蛇透過身體的什麼部位振動，發出警示聲響？', options:['尾巴','翅膀','喉嚨','腳'], answer:0, explain:'響尾蛇透過尾巴的振動發出警示聲。'},
+  {q:'「桌面打密碼」遊戲中，耳朵貼在桌面上聽比在空氣中聽更清晰，這說明了什麼？', options:['固體可以有效傳播聲音','固體無法傳播聲音','只有空氣能傳播聲音','聲音在固體中會消失'], answer:0, explain:'固體是良好的傳聲介質，貼在桌面上聽聲音會比在空氣中聽起來更清晰。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

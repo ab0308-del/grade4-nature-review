@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動二・光有什麼特性｜單元三小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元三 ➜ 活動二</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動二</span>
+      <h1>💡 光有什麼特性</h1>
+      <p>複習：光是直線行進的，被物體阻擋會形成影子；光照到平滑光亮的鏡面會反射，鏡面角度改變會改變反射方向。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>我們能看見物體，是因為有光照在物體上，或物體本身會發光。</li>
+        <li>光是直線行進的，被物體阻擋時，物體的另一側會形成影子。</li>
+        <li>表面平滑、光亮（鏡面特徵）的物體會反光，鏡面角度改變，反射方向也會改變。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：影子還是反光？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元三總覽</a></p>
+    <footer>單元三・活動二 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'陽光被大樹擋住，樹下出現陰影', bucket:'shadow'},
+  {label:'手電筒照射文具，文具後方出現黑影', bucket:'shadow'},
+  {label:'人站在路燈下，地上出現自己的影子', bucket:'shadow'},
+  {label:'光照到鏡子，改變了行進方向', bucket:'reflect'},
+  {label:'光照到平靜的水面，水面閃閃發亮', bucket:'reflect'},
+  {label:'光照到不鏽鋼湯匙表面，反射出亮光', bucket:'reflect'},
+  {label:'車子擋住陽光，地上出現車影', bucket:'shadow'},
+  {label:'光照到玻璃帷幕大樓，反射刺眼的光', bucket:'reflect'}
+];
+const buckets = [
+  {key:'shadow', label:'🌑 形成影子'},
+  {key:'reflect', label:'✨ 產生反射'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'晚上停電、房間一片漆黑，小安什麼都看不清楚，這是因為缺少了什麼？', options:['光','空氣','聲音','溫度'], answer:0, explain:'在黑暗的環境中，必須有光才能看得見物體。'},
+  {q:'下列何者是「本身會發光」的物體？', options:['正在使用的手電筒','桌子','書本','橡皮擦'], answer:0, explain:'手電筒本身會發光，桌子、書本、橡皮擦則需要靠光照射才看得見。'},
+  {q:'光的行進方式是？', options:['直線行進','曲線行進','繞圈行進','隨機亂飄'], answer:0, explain:'光是以直線的方式行進的。'},
+  {q:'手電筒的光被書本擋住，書本後方會出現什麼現象？', options:['影子','彩虹','回音','反光'], answer:0, explain:'光是直線行進的，被物體阻擋時，物體的另一側會形成影子。'},
+  {q:'手電筒越靠近物體，形成的影子會怎麼變化？', options:['變大','變小','不變','消失'], answer:0, explain:'光源越靠近物體，影子會變得越大。'},
+  {q:'下列哪一種物體表面最容易反光？', options:['平滑光亮的鏡子表面','粗糙的布料','鬆軟的泥土','乾燥的樹皮'], answer:0, explain:'表面平滑、光亮的物體才容易反光，這就是鏡面特徵。'},
+  {q:'光照射到鏡子後，改變鏡子的角度，反射的光的方向會怎樣？', options:['跟著改變','完全不變','消失不見','變成聲音'], answer:0, explain:'鏡面的角度會影響光的反射方向，角度改變，反射方向也會跟著改變。'},
+  {q:'腳踏車後方裝反光片，主要是應用光的什麼特性，提醒後方來車注意？', options:['反射','直線行進形成影子','發光','折射'], answer:0, explain:'反光片利用光的反射特性，把來車的燈光反射回去，提醒駕駛注意。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>
