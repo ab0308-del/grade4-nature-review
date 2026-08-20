@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動二・地表環境會變動嗎｜單元一小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元一 ➜ 活動二</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動二</span>
+      <h1>🌊 地表環境會變動嗎</h1>
+      <p>複習：流水和風會搬運地表物質，顆粒越小被搬得越遠；人類過度開發會加劇水土流失。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>流水和風會把地表物質搬到其他地方堆積，<b>顆粒越小的物質被搬得越遠</b>（土壤 &gt; 沙 &gt; 礫石）。</li>
+        <li>人類砍伐山林、開挖砂石、山坡地過度開發，會加速水土流失、造成山崩土石流。</li>
+        <li>用生態工法整治河川、山坡地覆蓋植物、做好水土保持，可以降低地表環境變動帶來的危害。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：保護還是破壞？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元一總覽</a></p>
+    <footer>單元一・活動二 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'砍光山坡樹木，讓山坡地裸露', bucket:'harm'},
+  {label:'在河川地任意開挖砂石', bucket:'harm'},
+  {label:'高山山坡大量開闢菜園種菜', bucket:'harm'},
+  {label:'用水泥把整條河岸硬化封死', bucket:'harm'},
+  {label:'在山坡地種植植物、覆蓋地表', bucket:'protect'},
+  {label:'用生態工法（塊石、蛇籠）整治河川', bucket:'protect'},
+  {label:'避免在容易崩塌的山坡大量開發', bucket:'protect'},
+  {label:'做好水土保持工程', bucket:'protect'}
+];
+const buckets = [
+  {key:'harm', label:'⚠️ 破壞環境'},
+  {key:'protect', label:'🌳 保護環境'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'對著混合礫石、沙、土壤的土堆持續澆水，會觀察到什麼現象？', options:['顆粒最小的土壤被沖得最遠','礫石被沖得最遠','三者被沖的距離一樣遠','完全不會被沖走'], answer:0, explain:'顆粒越小的地表物質，越容易被流水搬得更遠。'},
+  {q:'颱風來的時候，海邊沙丘上的沙子最容易被什麼作用搬走？', options:['地震','風','重力','人類踩踏'], answer:1, explain:'風的作用會把沙丘上的沙子吹到其他地方。'},
+  {q:'山坡地被砍光樹木、變得光禿禿之後，下大雨最容易發生什麼災害？', options:['沙塵暴','山崩、土石流','地震','颱風'], answer:1, explain:'裸露的山坡地缺少植物保護，下大雨容易引發山崩、土石流。'},
+  {q:'想要降低河岸受河水沖刷的危害，可以採用哪一種比較接近自然的工程技術？', options:['把整條河岸用水泥封死','生態工法（例如塊石、蛇籠護岸）','炸山開路','大量開挖砂石'], answer:1, explain:'生態工法強調與自然和諧共處，能降低對環境的傷害。'},
+  {q:'被流水沖刷之後，顆粒越小的地表物質會怎麼樣？', options:['被搬得越遠','被搬得越近','完全不會移動','變成岩石'], answer:0, explain:'顆粒越小、越輕，越容易被流水或風搬到更遠的地方。'},
+  {q:'在河川地大量開挖砂石，可能造成什麼影響？', options:['河岸變得更穩固','破壞河床，風吹時容易揚起細沙','水質變得更乾淨','完全沒有影響'], answer:1, explain:'開挖砂石會破壞河床，使河岸更容易受沖刷，砂石裸露也容易揚塵。'},
+  {q:'要保護地表環境、減少水土流失，最好的作法是？', options:['大量砍伐山林','山坡地覆蓋植物、做好水土保持','把河岸全部水泥化','持續開發更多山坡地菜園'], answer:1, explain:'覆蓋植物與做好水土保持，能有效降低地表物質流失。'},
+  {q:'高山山坡地大量開闢菜園，下大雨時容易發生什麼現象？', options:['土石被沖刷、河水變得黃濁','河水變得更清澈','土壤完全不會流失','沒有任何影響'], answer:0, explain:'開墾後的裸露山坡地下大雨時容易沖刷土石，使河水變得黃濁。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

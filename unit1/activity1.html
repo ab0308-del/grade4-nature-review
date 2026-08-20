@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動一・地表物質有什麼｜單元一小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元一 ➜ 活動一</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動一</span>
+      <h1>🪨 地表物質有什麼</h1>
+      <p>複習：地表由生物和非生物共同組成，岩石、沙、土壤的顆粒大小與生活應用各不相同。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>地表環境由「生物」（動物、植物）與「非生物」（空氣、水、岩石、沙、土壤）共同組成。</li>
+        <li>顆粒大小：<b>岩石（礫石）最大</b> → 沙第二 → <b>土壤最小</b>；土壤摸起來細細粉粉，常有植物碎屑。</li>
+        <li>生活應用：岩石可蓋房子、鋪步道；土壤鬆軟有養分，適合種植農作物。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：生物還是非生物？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元一總覽</a></p>
+    <footer>單元一・活動一 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'在森林裡跳來跳去的松鼠', bucket:'living'},
+  {label:'農田裡的水稻', bucket:'living'},
+  {label:'土裡忙碌搬家的螞蟻', bucket:'living'},
+  {label:'校園裡的大樹', bucket:'living'},
+  {label:'河邊圓圓的大石頭', bucket:'nonliving'},
+  {label:'海灘上的沙子', bucket:'nonliving'},
+  {label:'我們呼吸的空氣', bucket:'nonliving'},
+  {label:'緩緩流動的河水', bucket:'nonliving'}
+];
+const buckets = [
+  {key:'living', label:'🐿️ 生物'},
+  {key:'nonliving', label:'🪨 非生物'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'小明在海邊撿到一顆摸起來粗粗的、顆粒最大的地表物質，這最可能是什麼？', options:['沙','礫石（岩石碎塊）','土壤','空氣'], answer:1, explain:'岩石碎裂成的礫石顆粒最大，摸起來粗粗的。'},
+  {q:'農夫伯伯要種植水稻，最適合使用哪一種鬆軟、有養分的地表物質？', options:['岩石','沙','土壤','河水'], answer:2, explain:'土壤鬆軟又含有養分，最適合種植農作物。'},
+  {q:'要用放大鏡才能看清楚顆粒、摸起來有點粗粗的地表物質是？', options:['岩石','沙','土壤','空氣'], answer:1, explain:'沙的顆粒比土壤大，用放大鏡可以看到一粒一粒的。'},
+  {q:'下列何者屬於「非生物」？', options:['松鼠','岩石','稻子','螞蟻'], answer:1, explain:'岩石不是生物，是構成地表環境的物質。'},
+  {q:'招潮蟹喜歡在什麼樣的地表環境挖洞居住？', options:['堅硬的岩石地','鬆軟的泥灘地','柏油路面','水泥地面'], answer:1, explain:'招潮蟹需要鬆軟好挖掘的泥灘地，太硬的地方不好挖洞。'},
+  {q:'蓋房子、鋪步道最常使用哪一種地表物質？', options:['土壤','沙','岩石','樹葉'], answer:2, explain:'堅硬的岩塊常被用來蓋房子、鋪設步道。'},
+  {q:'西瓜要種在什麼樣的土壤才容易生長良好？', options:['太溼太黏的土壤','鬆散、容易排水的土壤','全是岩石的地面','海邊沙灘'], answer:1, explain:'西瓜適合種在鬆散、容易排水的土壤裡。'},
+  {q:'顆粒最小、顏色最深、摸起來細細粉粉，還常混有植物碎屑的地表物質是？', options:['岩石','礫石','沙','土壤'], answer:3, explain:'土壤的顆粒最小，還常常能找到植物的小碎屑。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

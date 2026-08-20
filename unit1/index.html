@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單元一・地表的靜與動｜複習樂園</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元一・地表的靜與動</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">單元一</span>
+      <h1>🏔️ 地表的靜與動</h1>
+      <p>地表由生物與非生物組成，流水、風和地震都會讓地表環境變動。複習重點 + 總挑戰都在這一頁！</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--green-4);">🕹️ 各活動的關卡小遊戲</h3>
+      <div class="grid">
+        <a class="tile" href="activity1.html">
+          <div class="emoji">🪨</div>
+          <h3>活動一</h3>
+          <p>地表物質有什麼</p>
+        </a>
+        <a class="tile" href="activity2.html">
+          <div class="emoji">🌊</div>
+          <h3>活動二</h3>
+          <p>地表環境會變動嗎</p>
+        </a>
+        <a class="tile" href="activity3.html">
+          <div class="emoji">🚨</div>
+          <h3>活動三</h3>
+          <p>怎樣做好地震防災</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelNotes">📖 重點整理</button>
+      <button class="tab-btn" data-target="panelQuiz">🎮 總複習大挑戰（15題）</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+
+      <div class="tab-panel active" id="panelNotes">
+        <div class="concept-map">
+          <div class="concept-card c1">
+            <h4>🪨 活動一・地表物質有什麼</h4>
+            <ul>
+              <li>地表由生物＋非生物組成</li>
+              <li>顆粒：岩石＞沙＞土壤</li>
+              <li>岩石蓋房鋪路、土壤種植</li>
+            </ul>
+          </div>
+          <div class="concept-card c2">
+            <h4>🌊 活動二・地表環境會變動嗎</h4>
+            <ul>
+              <li>流水、風會搬運地表物質</li>
+              <li>顆粒越小被搬得越遠</li>
+              <li>人類過度開發加劇水土流失</li>
+            </ul>
+          </div>
+          <div class="concept-card c3">
+            <h4>🚨 活動三・怎樣做好地震防災</h4>
+            <ul>
+              <li>地震會改變地表、造成災害</li>
+              <li>趴下、掩護、穩住</li>
+              <li>平時準備避難救生包</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note-box" style="margin-top:18px;">
+          <h4>一句話總結</h4>
+          <p style="margin:0;">地表環境由生物和非生物共同構成，會受到流水、風和地震等自然作用而改變；人類的開發行為可能加劇環境變動，因此做好水土保持與地震防災準備非常重要。</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panelQuiz">
+        <div id="finalQuiz"></div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="../index.html">⬅ 回到單元首頁</a></p>
+    <footer>單元一・地表的靜與動　複習網頁</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const finalQuestions = [
+  {q:'地表環境是由哪兩大類物質共同組成的？', options:['生物與非生物','水與空氣','岩石與植物','動物與礦物'], answer:0, explain:'地表環境由生物（動植物）和非生物（空氣、水、岩石、沙、土壤）共同構成。'},
+  {q:'岩石、沙、土壤三者中，顆粒最小的是？', options:['岩石','沙','土壤','三者一樣大'], answer:2, explain:'土壤的顆粒最小，摸起來細細粉粉的。'},
+  {q:'想在家裡種盆栽，最適合選用哪一種地表物質？', options:['顆粒最小、鬆軟有養分的土壤','岩石','礫石','沙子'], answer:0, explain:'土壤鬆軟又有養分，最適合種植植物。'},
+  {q:'大雨過後，山坡上被沖刷下來的細小土壤最容易堆積在哪裡？', options:['山頂','地勢較低的地方','空中','完全不會堆積'], answer:1, explain:'流水會把地表物質搬到地勢較低的地方堆積。'},
+  {q:'下列何者是造成地表環境改變的自然作用？', options:['流水和風','考試','運動','睡覺'], answer:0, explain:'流水和風是改變地表環境的重要自然作用。'},
+  {q:'為了減少人類開發對地表環境的破壞，下列做法正確的是？', options:['大量砍伐山林','做好水土保持、覆蓋植物','任意開挖河川砂石','把河岸全部水泥化'], answer:1, explain:'做好水土保持、種植覆蓋植物能有效減少地表物質流失。'},
+  {q:'強烈地震除了改變地表樣貌，還可能造成什麼？', options:['完全沒有影響','災害，危害人們安全','讓地表變得更平坦','讓植物長得更好'], answer:1, explain:'強烈地震可能造成房屋倒塌、山崩等災害。'},
+  {q:'地震發生時，正確的自我保護動作是？', options:['趴下、掩護、穩住','站著不動','馬上搭電梯逃跑','跑到窗戶邊'], answer:0, explain:'「趴下、掩護、穩住」能有效保護頭部與身體。'},
+  {q:'準備避難救生包的主要目的是？', options:['只是好看而已','讓災害發生時能立即取得逃生所需物資','用來裝飾房間','增加行李重量'], answer:1, explain:'避難救生包能在災害發生時提供立即所需的生存物資。'},
+  {q:'河邊常見圓圓的大石頭，主要是受到什麼作用形成的？', options:['被流水長期搬運磨圓','被風吹成圓形','人工雕刻而成','動物啃咬而成'], answer:0, explain:'石頭在河水中長期滾動摩擦，會逐漸被磨圓。'},
+  {q:'颱風豪雨過後，曾被大量開挖砂石的河川地可能會有什麼結果？', options:['河岸變得更穩固','河床裸露、容易被沖刷破壞','完全沒有影響','河水會變得更乾淨'], answer:1, explain:'過度開挖砂石會破壞河床，使河岸更容易受沖刷。'},
+  {q:'地震後如果聞到瓦斯味，正確的做法是？', options:['開燈查看','輕輕打開窗戶通風，並通知瓦斯公司','用打火機照明','插拔電器插頭'], answer:1, explain:'聞到瓦斯味千萬不可使用明火或開關電器，以免引發爆炸。'},
+  {q:'下列何者「不是」構成地表環境的非生物物質？', options:['空氣','水','岩石','松鼠'], answer:3, explain:'松鼠是生物，不屬於非生物物質。'},
+  {q:'用生態工法整治河川的優點是？', options:['完全不需要考慮生態','以較少的擾動達到與自然和諧共處','速度最快但破壞最大','只重視美觀不重視安全'], answer:1, explain:'生態工法強調以最少擾動、最低衝擊來兼顧安全與生態。'},
+  {q:'手機收到「國家防災告警系統」發送的地震速報簡訊時，應該怎麼做？', options:['不理會，繼續原本動作','立即尋找掩護、做好防護','馬上打電話報平安','衝去搭電梯'], answer:1, explain:'收到地震速報應立即採取「趴下、掩護、穩住」等保護動作。'}
+];
+renderQuiz(document.getElementById('finalQuiz'), finalQuestions, {shuffle:true});
+</script>
+</body>
+</html>

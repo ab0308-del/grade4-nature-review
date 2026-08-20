@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動三・怎樣做好地震防災｜單元一小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元一 ➜ 活動三</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動三</span>
+      <h1>🚨 怎樣做好地震防災</h1>
+      <p>複習：地震會改變地表也可能造成災害，平時、地震中、地震後都要做好準備。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>強烈地震會改變地表樣貌（山崩、地層隆起、堰塞湖），也可能造成災害，危害安全。</li>
+        <li>地震發生時要立即「<b>趴下、掩護、穩住</b>」，走樓梯不搭電梯。</li>
+        <li>平時要準備好避難救生包、熟悉逃生路線；地震後要檢查瓦斯、水電、房屋有無損壞。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：防災三階段</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元一總覽</a></p>
+    <footer>單元一・活動三 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'準備好避難救生包放在容易拿到的地方', bucket:'before'},
+  {label:'把櫃子釘牢在牆壁上', bucket:'before'},
+  {label:'和家人討論避難逃生路線', bucket:'before'},
+  {label:'立即「趴下、掩護、穩住」', bucket:'during'},
+  {label:'正在煮飯要立刻關閉瓦斯', bucket:'during'},
+  {label:'走樓梯逃生，不搭電梯', bucket:'during'},
+  {label:'檢查瓦斯管線是否受損', bucket:'after'},
+  {label:'檢查房屋有沒有龜裂', bucket:'after'}
+];
+const buckets = [
+  {key:'before', label:'📦 地震前準備'},
+  {key:'during', label:'🏃 地震發生時'},
+  {key:'after', label:'🔍 地震發生後'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'地震發生時，正在教室上課，應該怎麼做？', options:['立刻衝出教室','趴下、掩護、穩住，躲在桌子下','站在窗戶邊看外面狀況','搭電梯離開教室'], answer:1, explain:'應立即採「趴下、掩護、穩住」，保護頭部避免被掉落物砸傷。'},
+  {q:'避難救生包裡的必備物品，下列哪一個「不」包含在內？', options:['礦泉水','手電筒','漫畫書','哨子'], answer:2, explain:'必備物品包含礦泉水、食物、小毛毯、急救藥品、手套、手電筒、哨子等，漫畫書不是必需品。'},
+  {q:'正在廚房煮飯時發生地震，第一件事應該做什麼？', options:['繼續煮完再說','立刻關閉瓦斯','打開所有門窗','衝去搶救食物'], answer:1, explain:'應立刻關閉瓦斯，避免地震搖晃引發火災。'},
+  {q:'地震後要逃生避難時，應該怎麼走？', options:['搭電梯快速離開','走樓梯','跳窗','原地不動不理會'], answer:1, explain:'地震後應走樓梯，不可搭乘電梯，以免受困。'},
+  {q:'地震規模每增加1個單位，能量大約會增加幾倍？', options:['2倍','10倍','30倍','100倍'], answer:2, explain:'地震規模每增加1個單位，能量大約增加30倍。'},
+  {q:'地震後聞到瓦斯味，下列哪一個行為是危險的？', options:['輕輕打開窗戶通風','使用手電筒或開關電器','通知瓦斯公司派員處理','關閉瓦斯總開關'], answer:1, explain:'聞到瓦斯味時千萬不可使用火柴、手電筒或開關電器，以免產生火花引起爆炸。'},
+  {q:'民國88年造成臺灣重大傷亡的強烈地震稱為？', options:['八八風災','九二一大地震','莫拉克風災','太平洋地震'], answer:1, explain:'九二一大地震發生於南投縣集集鎮，造成嚴重的傷亡與地表變動。'},
+  {q:'手機收到的「地震速報」是利用什麼原理提早示警？', options:['P波比S波先到達、傳播速度較快','地震其實可以完全準確預測','靠衛星拍照分析','靠動物異常行為判斷'], answer:0, explain:'地震測站先偵測到傳播較快的P波，即可提早運算並發送警訊。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>
