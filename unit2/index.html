@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單元二・水生生物與環境｜複習樂園</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元二・水生生物與環境</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">單元二</span>
+      <h1>🐠 水生生物與環境</h1>
+      <p>生物生存的環境有陸域與水域之分，水生植物和動物各有法寶適應水中生活，我們也要一起保護水域環境。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--green-4);">🕹️ 各活動的關卡小遊戲</h3>
+      <div class="grid">
+        <a class="tile" href="activity1.html">
+          <div class="emoji">🏞️</div>
+          <h3>活動一</h3>
+          <p>生物生存的環境都相同嗎</p>
+        </a>
+        <a class="tile" href="activity2.html">
+          <div class="emoji">🌿</div>
+          <h3>活動二</h3>
+          <p>水生生物如何適應環境</p>
+        </a>
+        <a class="tile" href="activity3.html">
+          <div class="emoji">💙</div>
+          <h3>活動三</h3>
+          <p>如何愛護環境</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelNotes">📖 重點整理</button>
+      <button class="tab-btn" data-target="panelQuiz">🎮 總複習大挑戰（15題）</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+
+      <div class="tab-panel active" id="panelNotes">
+        <div class="concept-map">
+          <div class="concept-card c2">
+            <h4>🏞️ 活動一・生物生存的環境都相同嗎</h4>
+            <ul>
+              <li>環境分陸域與水域</li>
+              <li>不同環境有不同生物</li>
+              <li>拜訪水域環境要注意安全</li>
+            </ul>
+          </div>
+          <div class="concept-card c1">
+            <h4>🌿 活動二・水生生物如何適應環境</h4>
+            <ul>
+              <li>水生植物：漂浮／沉水／浮葉／挺水</li>
+              <li>魚：頭、軀幹、鰭；用鰓呼吸</li>
+              <li>各種水生動物呼吸方式不同</li>
+            </ul>
+          </div>
+          <div class="concept-card c3">
+            <h4>💙 活動三・如何愛護環境</h4>
+            <ul>
+              <li>環境影響飲食來源與習慣</li>
+              <li>汙染、破壞會危害水生生物</li>
+              <li>人人都能採取保護行動</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note-box" style="margin-top:18px;">
+          <h4>一句話總結</h4>
+          <p style="margin:0;">生物生存的環境包括陸域與水域，水生植物和動物各有特殊構造來適應水中生活；水域環境提供我們豐富資源，也需要大家一起保護它。</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panelQuiz">
+        <div id="finalQuiz"></div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="../index.html">⬅ 回到單元首頁</a></p>
+    <footer>單元二・水生生物與環境　複習網頁</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const finalQuestions = [
+  {q:'生物生存的環境主要可以分為哪兩大類？', options:['陸域環境與水域環境','高山與海洋','河流與湖泊','森林與草原'], answer:0, explain:'生物生存的環境包括陸域環境和水域環境。'},
+  {q:'溪流、湖泊、生態池、海洋都屬於什麼環境？', options:['水域環境','陸域環境','山地環境','森林環境'], answer:0, explain:'有水的環境就是水域環境。'},
+  {q:'進行水域環境調查時，下列哪一項是正確的安全觀念？', options:['一定要有大人陪同','可以自己單獨脫隊行動','可以隨意進入水中','不需要注意安全'], answer:0, explain:'進行野外調查一定要有大人陪同，並注意安全事項。'},
+  {q:'水生植物依生長方式大致可分為幾種類型？', options:['2種','3種','4種','5種'], answer:2, explain:'水生植物大致可分為漂浮性、沉水性、浮葉性及挺水性四種類型。'},
+  {q:'布袋蓮屬於哪一種水生植物類型？', options:['挺水性','沉水性','浮葉性','漂浮性'], answer:3, explain:'布袋蓮的根不長在水底泥土裡，整株漂浮在水面上，屬於漂浮性。'},
+  {q:'荷花的根和地下莖生長在哪裡？', options:['水面上','水底的泥土裡','空氣中','葉子裡面'], answer:1, explain:'挺水性植物的根和地下莖生長在水底的泥土裡，花和葉挺出水面。'},
+  {q:'魚類的外形主要分為哪三個部位？', options:['頭、軀幹、鰭','頭、身體、尾巴','眼睛、嘴巴、鰭','鰓、鰭、尾巴'], answer:0, explain:'魚類的外形主要分為頭、軀幹和鰭。'},
+  {q:'魚利用什麼構造在水中呼吸？', options:['肺','鰓','皮膚','氣孔'], answer:1, explain:'魚利用口和鰓蓋不停地一開一合，讓水流入和流出魚鰓，完成呼吸。'},
+  {q:'水黽能在水面上滑行是利用什麼原理？', options:['表面張力','浮力','重力','磁力'], answer:0, explain:'水黽腳上有細毛並分泌油脂，利用水的表面張力在水面上滑行。'},
+  {q:'台灣不同地區的傳統飲食習慣，主要受到什麼因素影響？', options:['環境與資源','個人喜好','天氣冷熱','人口多寡'], answer:0, explain:'不同的環境提供不同的資源，因而影響人類食物的種類、來源與飲食習慣。'},
+  {q:'下列何者是造成水域環境汙染的原因？', options:['工廠排放熱廢水','參加淨灘活動','做好水土保持','不捕捉水生生物'], answer:0, explain:'工廠排放未經處理的熱廢水會汙染水域環境。'},
+  {q:'想要保護水域環境，下列哪一項行為是正確的？', options:['隨意放生外來種水生生物','主動參與淨溪活動','在河岸烤肉留下垃圾','過度使用農藥'], answer:1, explain:'主動參與淨溪等活動是保護水域環境的具體行動。'},
+  {q:'睡蓮的葉子能夠平貼在水面上，是因為葉柄會隨著什麼而彎曲伸展？', options:['水位高低','天氣冷熱','陽光強弱','魚的多寡'], answer:0, explain:'浮葉性水生植物的葉柄會隨水位高低彎曲或伸展，讓葉面保持貼在水面。'},
+  {q:'河岸溼地被改成水泥溝渠後，對水生生物最可能造成什麼影響？', options:['讓生物更容易生存','使生物難以棲息','提供更多食物','增加溶氧量'], answer:1, explain:'水泥化的河岸使生物難以棲息，也容易在洪水期被沖刷殆盡。'},
+  {q:'我們可以透過哪個行動來實際保護水域環境？', options:['定期清理學校生態池','任意丟棄垃圾到水裡','大量噴灑農藥','把外來魚種放生到溪流'], answer:0, explain:'定期清理學校生態池是實際可行的保護水域環境行動。'}
+];
+renderQuiz(document.getElementById('finalQuiz'), finalQuestions, {shuffle:true});
+</script>
+</body>
+</html>

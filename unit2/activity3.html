@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動三・如何愛護環境｜單元二小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元二 ➜ 活動三</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動三</span>
+      <h1>💙 如何愛護環境</h1>
+      <p>複習：不同環境提供人類豐富的資源，也影響飲食習慣；水域環境遭到汙染或破壞會嚴重影響水生生物生存。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>環境不同，人類可利用的資源不同：山區的小米、蘭嶼的飛魚、西部海岸的牡蠣（蚵）、山區的茶葉。</li>
+        <li>汙染破壞水域環境的原因：熱廢水排放、過度使用農藥、垃圾、家庭廢水直排、河岸水泥化、外來種入侵。</li>
+        <li>保護行動：參與淨灘淨溪、不捕捉採摘水生生物、不隨意放生、上游做好水土保持。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：保護還是破壞？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元二總覽</a></p>
+    <footer>單元二・活動三 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'工廠將熱廢水直接排放到海裡', bucket:'harm'},
+  {label:'過度使用農藥、雨水沖入河川', bucket:'harm'},
+  {label:'在溪邊烤肉後留下垃圾', bucket:'harm'},
+  {label:'把不要的外來魚種放生到溪流', bucket:'harm'},
+  {label:'主動參加淨溪、淨灘活動', bucket:'protect'},
+  {label:'家庭廢水經污水處理廠處理後再排放', bucket:'protect'},
+  {label:'不捕捉、不採摘水生動植物', bucket:'protect'},
+  {label:'河流上游做好水土保持', bucket:'protect'}
+];
+const buckets = [
+  {key:'harm', label:'⚠️ 破壞環境'},
+  {key:'protect', label:'💙 保護環境'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'蘭嶼達悟族人最重要的傳統食物是什麼？', options:['飛魚','牛肉','小米','茶葉'], answer:0, explain:'飛魚是蘭嶼達悟族人最重要的傳統食物。'},
+  {q:'台灣山區原住民的傳統食物中，常用來釀酒的作物是？', options:['稻米','小米','茶葉','玉米'], answer:1, explain:'小米生長在山區，是原住民傳統食物，可做成小米粥、小米糕、釀小米酒。'},
+  {q:'台灣西部海岸盛產什麼水產，造就了知名的美食文化？', options:['鮭魚','牡蠣（蚵仔）','龍蝦','鮑魚'], answer:1, explain:'西部海岸地區盛產牡蠣，造就「蚵」的美食文化。'},
+  {q:'工廠將沒有處理過的熱廢水直接排放到海裡，最可能造成什麼影響？', options:['讓附近海水溫度上升、影響生物生存','讓海水變得更清涼','對海洋完全沒有影響','讓魚類長得更快更好'], answer:0, explain:'熱廢水排放會使附近海水溫度上升，影響附近海域生物的生存。'},
+  {q:'農夫過度使用農藥種菜，下大雨後可能造成什麼後果？', options:['農藥滲入土壤、雨水沖入河川造成汙染','農藥自動消失不會有影響','河川會變得更乾淨','只影響農作物、不影響河川'], answer:0, explain:'過度使用的農藥會滲入土壤，下大雨時被雨水沖進河川，汙染水域環境。'},
+  {q:'下列哪一項是保護水域環境的正確行動？', options:['主動參加淨灘、淨溪活動','把家庭廢水直接排入河川','在溪邊烤肉後留下垃圾','把不想養的外來魚種放生到溪流'], answer:0, explain:'主動參加淨灘、淨溪活動是保護水域環境的具體行動。'},
+  {q:'任意把外來種水生生物（如福壽螺、吳郭魚）放生到野外，可能造成什麼問題？', options:['幫助原生物種繁殖','威脅原生物種的生存','對環境完全沒有影響','讓水質變得更乾淨'], answer:1, explain:'外來種可能大量繁殖、與原生物種競爭資源，威脅原生物種的生存。'},
+  {q:'河岸溼地被改成水泥溝渠後，可能對水生生物造成什麼影響？', options:['生物難以棲息','生物會更容易繁殖','環境變得更自然','沒有任何差別'], answer:0, explain:'水泥化的河岸讓生物難以棲息，洪水期更容易把水生生物沖刷殆盡。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

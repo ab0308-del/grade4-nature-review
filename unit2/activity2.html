@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動二・水生生物如何適應環境｜單元二小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元二 ➜ 活動二</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動二</span>
+      <h1>🌿 水生生物如何適應環境</h1>
+      <p>複習：水生植物依生長方式分為漂浮性、沉水性、浮葉性、挺水性；水生動物的外形、運動與呼吸方式各有特徵。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>水生植物四種類型：漂浮性（布袋蓮、大萍）、沉水性（水蘊草）、浮葉性（睡蓮）、挺水性（荷花）。</li>
+        <li>魚的外形分為頭、軀幹、鰭；尾鰭提供推進力，胸鰭腹鰭轉向，背鰭臀鰭平衡；用鰓呼吸。</li>
+        <li>不同水生動物呼吸方式不同：魚、蟹、蝦用鰓；蛙、龜用肺；水黽用氣孔。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：水生植物分類</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元二總覽</a></p>
+    <footer>單元二・活動二 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'布袋蓮（葉柄有氣室，漂在水面上）', bucket:'float'},
+  {label:'大萍（葉面有細毛，漂在水面上）', bucket:'float'},
+  {label:'水蘊草（莖葉柔軟，整株沉在水中）', bucket:'sub'},
+  {label:'睡蓮（根在水底，葉平貼水面）', bucket:'leaf'},
+  {label:'荷花（根在水底，花葉挺出水面）', bucket:'emerge'},
+  {label:'香蒲（根在水底，花葉挺出水面）', bucket:'emerge'},
+  {label:'臺灣萍蓬草（根在水底，葉平貼水面）', bucket:'leaf'},
+  {label:'苦草（根在水底，整株沉在水中）', bucket:'sub'}
+];
+const buckets = [
+  {key:'float', label:'🛟 漂浮性'},
+  {key:'sub', label:'🌊 沉水性'},
+  {key:'leaf', label:'🍃 浮葉性'},
+  {key:'emerge', label:'🌸 挺水性'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'小華在池塘邊看到布袋蓮漂浮在水面上，這是因為它的哪個部位有特殊構造？', options:['葉柄有儲存空氣的氣室','根特別粗壯','花特別大','葉子特別薄'], answer:0, explain:'布袋蓮葉柄膨大，內部有許多氣室，能儲存空氣、增加浮力。'},
+  {q:'睡蓮的葉子能保持平貼在水面上，主要靠什麼隨水位變化來調整？', options:['葉柄彎曲或伸展','花瓣張開或閉合','根不斷生長','葉子變大變小'], answer:0, explain:'浮葉性水生植物的葉柄會隨水位高低彎曲或伸展，讓葉面保持貼在水面。'},
+  {q:'水蘊草的莖和葉為什麼摸起來特別柔軟？', options:['因為已經枯萎','方便隨水流擺動、減少水流衝擊','因為缺乏陽光','因為長期泡水腐爛'], answer:1, explain:'沉水性植物莖葉柔軟，可隨水流漂動擺動，減少水流的衝擊。'},
+  {q:'荷花的葉柄和地下莖（蓮藕）裡面有許多中空的構造，主要功能是？', options:['增加重量方便固定','儲存空氣','儲存養分','防止動物啃食'], answer:1, explain:'荷花葉柄和地下莖的中空構造（氣室）可以儲存空氣。'},
+  {q:'小明觀察到魚游泳時尾巴左右擺動，這個動作主要提供魚什麼功能？', options:['呼吸','前進的推進力','保持平衡','轉換方向'], answer:1, explain:'魚的尾鰭左右擺動，提供前進的推進力；胸鰭腹鰭負責轉向，背鰭臀鰭負責平衡。'},
+  {q:'魚的頭尾細、中間粗的紡錘形體型，對牠在水中活動有什麼幫助？', options:['減少水流阻力，方便游動','增加體重','方便躲藏','增加浮力'], answer:0, explain:'紡錘形（流線形）體型可以減少水流阻力，幫助魚類在水中順利游動。'},
+  {q:'魚的口和鰓蓋不停地一開一合，是在進行什麼動作？', options:['呼吸','喝水','咀嚼食物','發出聲音'], answer:0, explain:'魚靠鰓呼吸，口和鰓蓋一開一合能讓水流入、流出魚鰓，完成呼吸。'},
+  {q:'小美在池塘邊看到水黽在水面上滑行不會沉下去，這是利用什麼原理？', options:['表面張力','魚鰾充氣','浮力大於重力','腳上長蹼'], answer:0, explain:'水黽腳上有細毛並分泌油脂，利用水的表面張力在水面上滑行。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>

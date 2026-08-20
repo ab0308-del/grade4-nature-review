@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動一・生物生存的環境都相同嗎｜單元二小遊戲</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <a href="../index.html">🌏 首頁</a>
+    <span class="crumb">單元二 ➜ 活動一</span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">活動一</span>
+      <h1>🏞️ 生物生存的環境都相同嗎</h1>
+      <p>複習：生物生存的環境包括陸域環境和水域環境，不同的環境有不同的生物生存。</p>
+    </div>
+
+    <div class="note-box">
+      <h4>重點回顧</h4>
+      <ul>
+        <li>生物生存的環境分為「陸域環境」（例如高山、森林、草地）和「水域環境」（例如溪流、湖泊、生態池、海洋、水田）。</li>
+        <li>不同環境的溫度、水流、陽光照射情形都不一樣，所以生存的生物種類也不同。</li>
+        <li>拜訪水域環境要準備：望遠鏡（觀察）、撈網（採集）、水桶（收集）、紀錄表、圖鑑，並務必有大人陪同、注意安全。</li>
+      </ul>
+    </div>
+
+    <div class="tabs" id="tabRoot">
+      <button class="tab-btn active" data-target="panelClassify">🎯 關卡一：陸域還是水域？</button>
+      <button class="tab-btn" data-target="panelQuiz">📝 關卡二：生活情境測驗</button>
+    </div>
+    <div class="card" style="border-radius:0 0 18px 18px;">
+      <div class="tab-panel active" id="panelClassify">
+        <div id="classifyGame"></div>
+      </div>
+      <div class="tab-panel" id="panelQuiz">
+        <div id="quizGame"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;"><a class="backlink" href="index.html">⬅ 回到單元二總覽</a></p>
+    <footer>單元二・活動一 小遊戲</footer>
+  </div>
+
+<script src="../assets/app.js"></script>
+<script>
+initTabs();
+
+const items = [
+  {label:'白雪皚皚、風大寒冷的高山', bucket:'land'},
+  {label:'鳥類、松鼠出沒的森林', bucket:'land'},
+  {label:'水流湍急、長滿苔蘚岩石的溪流', bucket:'water'},
+  {label:'水靜止不動、陽光可照到底的生態池', bucket:'water'},
+  {label:'長滿箭竹草原的高海拔地區', bucket:'land'},
+  {label:'潮汐漲落的潮間帶', bucket:'water'},
+  {label:'種植水稻、隨時保持潮溼的水田', bucket:'water'},
+  {label:'開闊平坦的草地', bucket:'land'}
+];
+const buckets = [
+  {key:'land', label:'⛰️ 陸域環境'},
+  {key:'water', label:'💧 水域環境'}
+];
+renderClassify(document.getElementById('classifyGame'), items, buckets);
+
+const questions = [
+  {q:'小安去校外教學，看到溪流、湖泊、水田，這些都屬於什麼環境？', options:['陸域環境','水域環境','沙漠環境','高山環境'], answer:1, explain:'有水的環境就是水域環境，例如溪流、湖泊、水田等。'},
+  {q:'老師帶全班去拜訪學校附近的生態池調查，出發前最重要的準備是什麼？', options:['帶很多零食','確認安全事項並有師長陪同','自己一個人先去探路','不需要做任何準備'], answer:1, explain:'進行水域環境調查最重要的就是安全，務必要有師長陪同並清楚注意事項。'},
+  {q:'進行水域環境調查時，需要用來「採集」的工具是？', options:['望遠鏡','撈網','水桶','圖鑑'], answer:1, explain:'撈網用來採集，望遠鏡用來觀察，水桶用來收集，圖鑑用來對照辨識。'},
+  {q:'調查活動結束後，對採集到的水生生物正確的做法是？', options:['帶回家當寵物','放回原本的環境','隨意丟棄','留在水桶裡不管'], answer:1, explain:'調查活動結束後應將水生生物放回原處，維持環境倫理。'},
+  {q:'高山環境風大且寒冷，下列哪一種生物最可能生活在那裡？', options:['珊瑚','貂','海龜','招潮蟹'], answer:1, explain:'高山環境寒冷風大，貂等耐寒動物適合在此生存；珊瑚、海龜、招潮蟹則生活在水域環境。'},
+  {q:'海洋依離岸遠近、水深不同，生物種類也不同，淺海區常見的生物是？', options:['珊瑚、小丑魚','貂、松鼠','箭竹、玉山圓柏','水稻、荷花'], answer:0, explain:'淺海區陽光充足，常見珊瑚、小丑魚等生物。'},
+  {q:'為什麼不同的水域環境（例如溪流和生態池），生存的水生生物會不一樣？', options:['因為水流、水質、陽光照射情形不同','因為所有水域環境都一樣','因為生物自己選擇要不要不同','沒有原因，純屬巧合'], answer:0, explain:'不同水域環境的水流、水質及陽光照射情形都不一樣，所以生存的水生生物也不同。'},
+  {q:'下列何者「不屬於」進行水域環境調查時應遵守的環境倫理？', options:['維持原來的環境景觀','肆意破壞水域環境','調查後將生物放回原處','考量採集的合法性與正當性'], answer:1, explain:'調查時應維持環境景觀，不可以肆意破壞。'}
+];
+renderQuiz(document.getElementById('quizGame'), questions, {shuffle:true});
+</script>
+</body>
+</html>
